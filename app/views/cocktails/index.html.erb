@@ -1,0 +1,14 @@
+<h1>COCKTAILS</h1>
+<p>
+  <% @cocktails.each do |cocktail| %>
+    <p><%= cocktail.name %></p>
+    <p><%= link_to "See details", cocktail_path(cocktail.id), class: "btn btn-primary"%></p>
+      <%= link_to cocktail_path(cocktail.id),
+      method: :delete,
+      data: { confirm: "Are you sure?" } do %>
+      <i class="far fa-trash-alt"></i>
+      <% end %>
+  <% end %>
+</p>
+
+<%= link_to 'Add a new cocktail', new_cocktail_path, class: "btn btn-primary" %>
