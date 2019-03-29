@@ -1,6 +1,24 @@
+<div class="back-img">
 <h1>Add a new cocktail</h1>
 
-<%= simple_form_for @cocktail do |f|%>
-  <%= f.input :name %>
-  <%= f.submit "submit", class: "btn btn-primary"%>
-<% end%>
+  <div class="form">
+    <%= simple_form_for @cocktail do |f|%>
+      <%= f.input :image %>
+      <%= f.input :name %>
+      <%= f.submit "submit", class:  "btn btn-ghost"%>
+    <% end%>
+  </div>
+
+  <div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copyright">
+      I love drinking <i class="fas fa-cocktail"></i>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+.card-index {
+  display: grid;
+  justify-content: space-around;
+  background-size: cover;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.card-img-top {
+  object-fit: cover;
+  height: 300px;
+}

@@ -1,23 +1,35 @@
-<h1>COCKTAILS</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://img1.southernliving.timeinc.net/sites/default/files/styles/story_card_hero/public/image/2017/07/main/summer_cobbler_cocktail_2487501_black_001_0_0_0.jpg?itok=u1rKm9nL)">
+  <h1>cocktails</h1>
+  <%= link_to 'Add a new cocktail', new_cocktail_path, class: "btn btn-outline-light" %>
+</div>
 
-<div class="cards">
-    <% @cocktails.each do |cocktail| %>
-
-    <div class="card" style="width: 18rem">
-    <img class="card-img-top" src="..." alt="Card image cocktail">
-    <div class="card-body">
-      <p><h5 class = "card-title"><%= cocktail.name %></h5>
+<div class="row">
+  <% @cocktails.each do |cocktail| %>
+    <div class="col-3" style="width: 18rem">
+      <div class="card-index">
+        <%= image_tag cocktail.image, class: "card-img-top" %>
+        <p><h5><%= cocktail.name %></h5>
         <%= link_to cocktail_path(cocktail.id),
         method: :delete,
         data: { confirm: "Are you sure?" } do %>
         <i class="far fa-trash-alt"></i></p>
-      <p><%= link_to "See details", cocktail_path(cocktail.id), class: "btn btn-primary"%></p>
+        <p><%= link_to "See details", cocktail_path(cocktail.id), class:  "btn btn-ghost" %></p>
         <% end %>
-        </div>
+      </div>
     </div>
-  </div>
-  </div>
-    <% end %>
-    </div>
+  <% end %>
+</div>
 
-<%= link_to 'Add a new cocktail', new_cocktail_path, class: "btn btn-primary" %>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    I love drinking <i class="fas fa-cocktail"></i>
+  </div>
+</div>

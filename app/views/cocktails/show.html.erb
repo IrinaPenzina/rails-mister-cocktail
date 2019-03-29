@@ -1,19 +1,35 @@
 <h1><%= @cocktail.name %></h1>
 
-<p>
+<div class="product">
 <% @cocktail.doses.each do |dose|%>
-<%= dose.ingredient.name %>
-<p><%= dose.description %>
-<%= link_to dose_path(dose.id),
+  <%= cl_image_tag dose.cocktail.image, height: 300, width: 400, crop: :fill, class: "card-img-top" %>
+    <div class="product-infos">
+    <%= dose.ingredient.name %>
+    <p><%= dose.description %>
+    <%= link_to dose_path(dose.id),
         method: :delete,
         data: { confirm: "Are you sure?" } do %>
         <i class="far fa-trash-alt"></i></p>
         <% end %>
-<% end %>
-</p>
+      </div>
+  <% end %>
+</div>
 
-<%= link_to "Let's create it", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
 
-<%= link_to 'See all cocktails', cocktails_path, class: "btn btn-primary" %>
+<%= link_to "Let's create it", new_cocktail_dose_path(@cocktail), class:  "btn btn-ghost" %>
 
+<%= link_to 'See all cocktails', cocktails_path, class: "btn btn-ghost" %>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    I love drinking <i class="fas fa-cocktail"></i>
+  </div>
+</div>
 
