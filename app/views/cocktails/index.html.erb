@@ -1,14 +1,23 @@
 <h1>COCKTAILS</h1>
-<p>
-  <% @cocktails.each do |cocktail| %>
-    <p><%= cocktail.name %></p>
-    <p><%= link_to "See details", cocktail_path(cocktail.id), class: "btn btn-primary"%></p>
-      <%= link_to cocktail_path(cocktail.id),
-      method: :delete,
-      data: { confirm: "Are you sure?" } do %>
-      <i class="far fa-trash-alt"></i>
-      <% end %>
-  <% end %>
-</p>
+
+<div class="cards">
+    <% @cocktails.each do |cocktail| %>
+
+    <div class="card" style="width: 18rem">
+    <img class="card-img-top" src="..." alt="Card image cocktail">
+    <div class="card-body">
+      <p><h5 class = "card-title"><%= cocktail.name %></h5>
+        <%= link_to cocktail_path(cocktail.id),
+        method: :delete,
+        data: { confirm: "Are you sure?" } do %>
+        <i class="far fa-trash-alt"></i></p>
+      <p><%= link_to "See details", cocktail_path(cocktail.id), class: "btn btn-primary"%></p>
+        <% end %>
+        </div>
+    </div>
+  </div>
+  </div>
+    <% end %>
+    </div>
 
 <%= link_to 'Add a new cocktail', new_cocktail_path, class: "btn btn-primary" %>
